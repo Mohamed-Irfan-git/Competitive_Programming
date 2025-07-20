@@ -2,11 +2,11 @@ package com.example.recursion.string;
 
 public class RemoveCharector {
     public static void main(String[] args) {
-//        removeCharector("","irfaaan");
-//        System.out.println(removeCharector("Kbaliliba"));
+//        removeCharacter("","irfaaan");
+//        System.out.println(removeCharacter("Kbaliliba"));
         System.out.println(skip("bdappledgrappyy"));
     }
-    public static void removeCharector(String s,String str) {
+    public static void removeCharacter(String s,String str) {
         if(str.isEmpty()){
             System.out.println(s);
             return;
@@ -14,11 +14,11 @@ public class RemoveCharector {
         String ch = String.valueOf(str.charAt(0));
 
         if(ch.equalsIgnoreCase("a")){
-            removeCharector(s,str.substring(1));
+            removeCharacter(s,str.substring(1));
         }
         else{
             s = s+ch;
-            removeCharector(s,str.substring(1));
+            removeCharacter(s,str.substring(1));
         }
 
     }

@@ -18,6 +18,7 @@ public class QuickSort {
         int s= start;
         int e= end;
 
+
         while(s<=e){
             while(arr[s]<pivot){
                 s++;
@@ -37,7 +38,7 @@ public class QuickSort {
         quicksort(arr,s,end);
 
     }
-    //it rearrange the pivot
+    //it rearranges the pivot
     public static void swap(int[] arr,int s,int e){
         int temp =arr[s];
         arr[s]=arr[e];

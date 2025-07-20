@@ -9,11 +9,12 @@ public class InsertionSort {
     }
     public static int[] insertionSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
+            //we get current element has first index
             int current = arr[i];
             //monitoring tool
             int j=i-1;
 
-            //we using here key and pointer not c pointer
+            //we're using here key and pointer not c pointer
             while(j>=0&&arr[j]>current){
                 arr[j+1]=arr[j];
                 j=j-1;

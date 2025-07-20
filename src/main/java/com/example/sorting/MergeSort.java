@@ -38,7 +38,7 @@ public class MergeSort {
      int k=0;
      int j =0;
 
-     //using two pointer checking one pointer use to add in to he array
+     //using two pointer checking one pointer use to add in to the array
      while(i<left.length&&j<right.length){
          if(left[i]<right[j]){
              arr[k]=left[i];
@@ -52,7 +52,7 @@ public class MergeSort {
          }
      }
 
-     //we sorting here balanced elements in this array
+     //we're sorting here balanced elements in this array
      while(i<left.length){
          arr[k]=left[i];
          k++;

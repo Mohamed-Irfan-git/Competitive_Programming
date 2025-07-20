@@ -13,6 +13,7 @@ public class BubbleSort {
         if(strat==0){
             return;
         }
+
         if(strat>end){
             if(arr[end]>arr[end+1]){
                 int temp=arr[end];
