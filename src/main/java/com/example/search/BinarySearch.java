@@ -12,7 +12,7 @@ public class BinarySearch {
         int end = arr.length;
         int mid= start+(end-start)/2;
 
-        //we are divide the problem to small using thoses variable
+        //we are divide the problem to small using these variable
         while(start < end){
             if(target==arr[mid]){
                 return mid;

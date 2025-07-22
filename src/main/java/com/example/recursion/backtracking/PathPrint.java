@@ -60,7 +60,4 @@ public class PathPrint {
         return list;
     }
 
-
-
-
 }
