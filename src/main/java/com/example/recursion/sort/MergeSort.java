@@ -6,7 +6,7 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] arr = { 5, 4, 3, 2, 1 };
         mergeSort(arr);
-        //dynamcally array's value change that's why here also changed
+        //dynamically array's value change that's why here also changed
         System.out.println(Arrays.toString(arr));
 
 
@@ -19,7 +19,7 @@ public class MergeSort {
        }
        int mid = arr.length/2;
 
-       //in here just copy the array and put it into new array
+       //here, just copy the array and put it into new array
        int [] right = Arrays.copyOfRange(arr,0,mid);
        int [] left = Arrays.copyOfRange(arr,mid,arr.length);
 
@@ -52,7 +52,7 @@ public class MergeSort {
          }
      }
 
-     //we sorting here balanced elements in this array
+     //we're sorting here balanced elements in this array
      while(i<left.length){
          arr[k]=left[i];
          k++;

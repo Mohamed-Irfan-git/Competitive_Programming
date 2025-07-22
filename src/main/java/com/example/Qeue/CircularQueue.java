@@ -9,7 +9,7 @@ public class CircularQueue {
     protected int front= 0;
     protected int end = 0;
 
-    //When we not give any size it set it ti the default one
+    //When we not give any size, it set it ti the default one
     public CircularQueue() {
         this(DEFAULT_SIZE);
     }
