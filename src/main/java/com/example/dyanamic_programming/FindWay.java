@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class FindWay {
     public static void main(String[] args) {
-        int [] arr1 = {1,3,1,4,2,6};
-        int [] arr2 = {1,4,1,1,6};
+        int [] arr1 = {5,4,10};
+        int [] arr2 = {4,2,4,6,1};
         int realSum = 10;
         System.out.println(twoStacks(arr1,arr2,realSum));
 
