@@ -1,6 +1,7 @@
 package com.example.tree.avl_tree;
 
 public class AVL{
+
     private Node root;
     private static class  Node{
         private final int value;
@@ -151,8 +152,6 @@ public class AVL{
         display(node.left, "Left child of " + node.value + " : ");
         display(node.right, "Right child of " + node.value + " : ");
     }
-
-
 
 }
 
