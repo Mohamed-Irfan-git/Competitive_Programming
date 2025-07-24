@@ -1,12 +1,11 @@
-package com.example.hashmap;
+package com.example.heap;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class HashM <T extends Comparable<T>> {
+public class Heap<T extends Comparable<T>> {
     private ArrayList <T> list;
 
-    public HashM() {
+    public Heap() {
         list = new ArrayList<>();
     }
 
@@ -63,7 +62,7 @@ public class HashM <T extends Comparable<T>> {
         if(left<list.size()-1 && list.get(left).compareTo(list.get(min)) < 0){
             min = left;
         }
-        if(right<list.size()-1 && list.get(right).compareTo(list.get(min)) > 0){
+        if(right<list.size()-1 && list.get(right).compareTo(list.get(min)) < 0){
             min = right;
         }
         if(min!=index){
@@ -78,12 +77,13 @@ public class HashM <T extends Comparable<T>> {
             list1.add(this.remove());
 
         }
-        return list1;
+        list=list1;
+        return list;
     }
 
     public ArrayList<T> displayAll(){
         ArrayList<T> lis = new ArrayList<>(list);
-       return lis;
+        return lis;
     }
 
 
