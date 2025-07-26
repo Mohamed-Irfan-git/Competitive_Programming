@@ -1,5 +1,7 @@
 package com.example.linked_list;
 
+import java.util.LinkedList;
+
 public class Main {
     public static void main(String[] args) {
         LinkList linkList = new LinkList();
@@ -9,6 +11,7 @@ public class Main {
         linkList.insertFirst(40);
         linkList.insertFirst(50);
         linkList.insertLast(32);
-        linkList.display();
+
+
     }
 }

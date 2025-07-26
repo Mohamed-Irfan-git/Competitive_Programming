@@ -2,11 +2,11 @@ package com.example.linked_list;
 
 public class LinkList {
 
-    private final class Node {
+    private static final class Node {
          int data;
          Node next;
 
-        private Node(int data) {
+        Node(int data) {
             this.data = data;
         }
         private Node(int data, Node next) {
@@ -44,5 +44,93 @@ public class LinkList {
             temp=temp.next;
         }
         System.out.println("END");
+    }
+
+    public boolean hasCycle(){
+        Node slow = head;
+        Node fast = head;
+
+        while(fast!=null&&fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+
+            if(slow==fast){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Node cycleFormingNode(){
+        Node slow = head;
+        Node fast = head;
+
+        while(fast!=null&&fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+
+            if(slow==fast){
+
+                Node entry = head;
+
+                while(entry!=slow){
+                    entry=entry.next;
+                    slow=slow.next;
+                }
+                return entry;
+            }
+        }
+        return null;
+    }
+    public boolean isHappyNumber(int n){
+        Node fast = new Node(getSqureSum(getSqureSum(n)));
+        Node slow = new Node(getSqureSum(n));
+
+        if(fast.data!=1 && fast.data!=slow.data){
+            slow = new Node (getSqureSum(slow.data));
+            fast = new Node (getSqureSum(getSqureSum(fast.data)));
+
+        }
+        return fast.data==1;
+
+    }
+    private int getSqureSum(int n){
+        int sum = 0;
+        while(n>0){
+            int rem= n%10;
+            sum = sum + rem*rem;
+            n=n/10;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        LinkList list = new LinkList();
+
+        Node head = new Node(12);
+        Node second = new Node(14);
+        Node third = new Node(11);
+        Node fourth = new Node(8);
+        Node six = new Node(6);
+        Node seven = new Node(7);
+        Node eight = new Node(4);
+
+        head.next = second;
+        second.next = third;
+        third.next = fourth;
+        fourth.next = six;
+        six.next = seven;
+        seven.next = eight;
+        eight.next = fourth;
+
+        list.head=head;
+
+
+        System.out.println(list.hasCycle());
+        System.out.println(list.cycleFormingNode().data);
+        System.out.println(list.isHappyNumber(19));
+
+
+
     }
 }

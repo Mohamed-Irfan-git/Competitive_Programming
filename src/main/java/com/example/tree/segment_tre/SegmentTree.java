@@ -3,8 +3,8 @@ package com.example.tree.segment_tre;
 public class SegmentTree {
     private static class Node {
         private int data;
-        private int startInterval;
-        private int endInterval;
+        private final int startInterval;
+        private final int endInterval;
         private Node left;
         private Node right;
 
@@ -102,7 +102,4 @@ public class SegmentTree {
        }
        return node.data;
     }
-
-
-
 }

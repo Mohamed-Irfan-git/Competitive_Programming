@@ -12,9 +12,6 @@ public class AVL{
         public Node(int value){
             this.value = value;
         }
-        public int getValue(){
-            return value;
-        }
     }
     public AVL(){
 
@@ -53,6 +50,7 @@ public class AVL{
     }
 
     private Node rotate(Node node) {
+        //left case
         if (height(node.left) - height(node.right) > 1) {
             // left heavy
             if(height(node.left.left) - height(node.left.right) > 0) {
