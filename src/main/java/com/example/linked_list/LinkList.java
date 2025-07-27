@@ -51,6 +51,22 @@ public class LinkList {
         node.next=insertRec(node.next,data,index-1);
         return  node;
     }
+    public void reverse(){
+        if(head==null){
+            return;
+        }
+        reverse(this.head);
+    }
+    private void reverse(Node node){
+        if(node==tail){
+            head=tail;
+            return;
+        }
+        reverse(node.next);
+        tail.next=node;
+        tail=node;
+        tail.next=null;
+    }
 
     public void display(){
         Node temp=head;
