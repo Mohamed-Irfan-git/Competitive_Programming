@@ -1,6 +1,6 @@
 package com.example.tree.binary_tree;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class BinaryTree {
     private Node root;

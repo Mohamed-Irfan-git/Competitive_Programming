@@ -1,5 +1,12 @@
 package com.example.tree.avl_tree;
 
+import com.example.tree.binary_tree.BinarySearchTree;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class AVL{
 
     private Node root;
@@ -150,6 +157,37 @@ public class AVL{
         display(node.left, "Left child of " + node.value + " : ");
         display(node.right, "Right child of " + node.value + " : ");
     }
+
+    public List<Double> breadthFirstAverage() {
+        return breadthFirstAverage(this.root);
+    }
+
+    private List<Double> breadthFirstAverage(Node node) {
+        if (node == null) {
+            return new ArrayList<>();
+        }
+
+        List<Double> outer = new ArrayList<>();
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(node);
+
+        while (!queue.isEmpty()) {
+            double sum = 0;
+            int len = queue.size();
+            for (int i = 0; i < len; i++) {
+                Node current = queue.poll();
+                assert current != null;
+                sum = sum+current.value;
+
+                if (current.left != null) queue.offer(current.left);
+                if (current.right != null) queue.offer(current.right);
+            }
+            outer.add(sum / len);
+        }
+
+        return outer;
+    }
+
 
 }
 

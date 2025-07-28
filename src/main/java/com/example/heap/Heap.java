@@ -82,8 +82,7 @@ public class Heap<T extends Comparable<T>> {
     }
 
     public ArrayList<T> displayAll(){
-        ArrayList<T> lis = new ArrayList<>(list);
-        return lis;
+        return new ArrayList<>(list);
     }
 
 

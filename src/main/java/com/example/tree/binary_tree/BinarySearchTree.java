@@ -1,5 +1,10 @@
 package com.example.tree.binary_tree;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class BinarySearchTree {
     private Node root;
     private static class  Node{
@@ -92,6 +97,44 @@ public class BinarySearchTree {
         display(node.left, "Left child of " + node.value + " : ");
         display(node.right, "Right child of " + node.value + " : ");
     }
+    public List<List<Integer>> breadthFirst(){
+        return breadthFirst(this.root);
+    }
+
+
+    //breath first search(bfs)
+    private List<List<Integer>> breadthFirst(Node node){
+        if(node == null ){
+            return null;
+        }
+
+        List<List<Integer>> outer = new ArrayList<>();
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(node);
+        while (!queue.isEmpty()){
+            List<Integer> inner = new ArrayList<>();
+            int len= queue.size();
+            for (int i=0;i<len;i++){
+                Node current = queue.poll();
+                inner.add(current.value);
+              if(current.left != null){
+                  queue.offer(current.left);
+              }
+              if(current.right != null){
+                  queue.offer(current.right);
+              }
+            }
+
+            outer.add(inner);
+        }
+        return outer;
+
+    }
+
+
+
+
+
 
 }
 
