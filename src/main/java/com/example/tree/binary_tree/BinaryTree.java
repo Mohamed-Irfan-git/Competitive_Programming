@@ -92,15 +92,15 @@ public class BinaryTree {
 
     }
 
-    public void pastOrder(){
-        pastOrder(root);
+    public void postOrder(){
+        postOrder(root);
     }
-    private void pastOrder(Node node){
+    private void postOrder(Node node){
         if(node == null){
             return;
         }
-        pastOrder(node.left);
-        pastOrder(node.right);
+        postOrder(node.left);
+        postOrder(node.right);
         System.out.print(node.val+" ");
 
     }

@@ -68,6 +68,25 @@ public class LinkList {
         tail.next=null;
     }
 
+    private void reverseInPlace(Node node){
+        if(node==null){
+            return;
+        }
+        Node prev=null;
+        Node current = node;
+        Node next = current.next;
+
+        while(current.next!=null){
+            current.next=prev;
+            prev=current;
+            current=next;
+
+            if(next!=null){
+                next =  next.next;
+            }
+        }
+    }
+
     public void display(){
         Node temp=head;
         while(temp!=null){

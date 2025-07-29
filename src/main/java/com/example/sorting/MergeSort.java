@@ -52,6 +52,7 @@ public class MergeSort {
          }
      }
 
+
      //we're sorting here balanced elements in this array
      while(i<left.length){
          arr[k]=left[i];

@@ -1,9 +1,6 @@
 package com.example.tree.binary_tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class BinarySearchTree {
     private Node root;
@@ -126,6 +123,113 @@ public class BinarySearchTree {
             }
 
             outer.add(inner);
+        }
+        return outer;
+
+    }
+
+    //level order successor of node
+    public int nodeAfter(int key){
+        return nodeAfter(this.root,key);
+
+    }
+    private int nodeAfter(Node node,int key){
+        if(node == null){
+            return -1;
+        }
+        Queue<Node> queue = new LinkedList<>();
+        int val;
+        Node current = node;
+        queue.offer(current);
+
+        while (!queue.isEmpty()){
+            current = queue.poll();
+            if(current.left!= null){
+                queue.offer(current.left);
+            }
+            if(current.right !=null){
+                queue.offer(current.right);
+            }
+            if(current.value == key){
+                break;
+
+            }
+        }
+      if(!queue.isEmpty()){
+          return queue.peek().value;
+
+      }else {
+          return -1;
+      }
+    }
+
+
+    //zigzagLevelOrder
+    private ArrayList<ArrayList<Integer>> zigzagLevelOrder(Node node){
+        if(node == null){
+            return new ArrayList<>();
+        }
+        boolean reverse = false;
+        Deque<Node> queue = new LinkedList<>();
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+
+        queue.offer(node);
+        while (!queue.isEmpty()){
+            ArrayList<Integer> inner = new ArrayList<>();
+            int size = queue.size();
+            for(int i=0;i<size;i++){
+                if(!reverse){
+                    Node current = queue.pollFirst();
+                    inner.add(current.value);
+                    if(current.left != null){
+                        queue.offerLast(current.left);
+                    }
+                    if(current.right != null){
+                        queue.offerLast(current.right);
+                    }
+                }else {
+                    Node current = queue.pollLast();
+                    inner.add(current.value);
+                    if(current.right != null){
+                        queue.offerFirst(current.right);
+                    }
+                    if(current.left != null){
+                        queue.offerFirst(current.left);
+                    }
+                }
+            }
+            reverse = !reverse;
+            result.add(inner);
+
+        }
+        return result;
+
+    }
+
+
+    private List<List<Integer>> reverseArrayList(Node node){
+        if(node == null ){
+            return null;
+        }
+
+        List<List<Integer>> outer = new ArrayList<>();
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(node);
+        while (!queue.isEmpty()){
+            List<Integer> inner = new ArrayList<>();
+            int len= queue.size();
+            for (int i=0;i<len;i++){
+                Node current = queue.poll();
+                inner.add(current.value);
+                if(current.left != null){
+                    queue.offer(current.left);
+                }
+                if(current.right != null){
+                    queue.offer(current.right);
+                }
+            }
+
+            outer.add(0,inner);
         }
         return outer;
 
