@@ -1,5 +1,7 @@
 package com.example.recursion.easy;
 
+import java.util.HashMap;
+
 public class Fibonachi {
     public static void main(String[] args) {
         System.out.println(fiboRec(7));
@@ -26,5 +28,37 @@ public class Fibonachi {
         }
         System.out.println(first+second);
 
+    }
+
+    private static int fiboMemo(int n){
+        HashMap<Integer, Integer> memo = new HashMap<>();
+        return fib(n,memo);
+
+    }
+    private static int fib(int n,HashMap<Integer,Integer> map){
+        if(n<2){
+            return n;
+        }
+        if(map.containsKey(n)){
+            return map.get(n);
+        }
+        int result = fib(n-1,map)+fib(n-2,map);
+        map.put(n,result);
+        return result;
+    }
+
+    private static int tribonoc(int n){
+        return tri(n,new HashMap<>());
+    }
+    private static int tri(int n,HashMap<Integer,Integer> map){
+        if(n<3){
+            return n;
+        }
+        if(map.containsKey(n)){
+            return map.get(n);
+        }
+        int result = tri(n-1,map)+tri(n-2,map)+tri(n-3,map);
+        map.put(n,result);
+        return result;
     }
 }
