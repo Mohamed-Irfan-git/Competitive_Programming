@@ -154,34 +154,55 @@ public class LinkList {
         }
         return sum;
     }
+    public Node reverseKGroup(Node head, int k){
+        if(k<=1 || head==null){
+            return head;
+        }
 
-//    public static void main(String[] args) {
-//        LinkList list = new LinkList();
-//
-//        Node head = new Node(12);
-//        Node second = new Node(14);
-//        Node third = new Node(11);
-//        Node fourth = new Node(8);
-//        Node six = new Node(6);
-//        Node seven = new Node(7);
-//        Node eight = new Node(4);
-//
-//        head.next = second;
-//        second.next = third;
-//        third.next = fourth;
-//        fourth.next = six;
-//        six.next = seven;
-//        seven.next = eight;
-//        eight.next = fourth;
-//
-//        list.head=head;
-//
-//
-//        System.out.println(list.hasCycle());
-//        System.out.println(list.cycleFormingNode().data);
-//        System.out.println(list.isHappyNumber(19));
-//
-//
-//
-//    }
+        Node pre = null;
+        Node current = head;
+
+        int length = getSize(head);
+        int count = length/k;
+
+        while(count > 0){
+            Node last = pre;
+            Node newEnd = current;
+            Node next = current.next;
+
+            for (int i=0; current!= null && i<k; i++){
+                current.next = pre;
+                pre = current;
+                current = next;
+                if(next!=null){
+                    next = next.next;
+                }
+            }
+            if(last!=null){
+                last.next = pre;
+            }else {
+                head = pre;
+            }
+            newEnd.next = current;
+            pre = newEnd;
+
+            count--;
+        }
+        return head;
+
+    }
+
+    private int getSize(Node head){
+        int count = 0;
+        Node temp = head;
+
+        while (temp!=null){
+            count++;
+            temp=temp.next;
+        }
+        return count;
+
+    }
+
+
 }

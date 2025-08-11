@@ -26,9 +26,8 @@ public class SegmentTree {
             return leaf;
         }
 
-        Node node = new Node(start,end);
         int mid = (start+end)/2;
-
+        Node node = new Node(start,end);
         node.left = constructor(arr,start,mid);
         node.right = constructor(arr,mid+1,end);
         node.data = node.left.data + node.right.data;
