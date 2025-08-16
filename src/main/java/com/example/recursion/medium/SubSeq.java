@@ -26,7 +26,7 @@ public class SubSeq {
             return list;
         }
         char ch = up.charAt(0);
-        List<String> left = subSeqRet(ch+p,up.substring(1));
+        List<String> left = subSeqRet(p+ch,up.substring(1));
         List<String> right = subSeqRet(p,up.substring(1));
 
         left.addAll(right);
