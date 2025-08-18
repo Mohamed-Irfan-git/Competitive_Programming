@@ -4,14 +4,18 @@ import java.util.*;
 
 public class UnitGraphs {
     public static void shortestPath(int n, int m, List<List<Integer>> graph,int source) {
+
         List<List<Integer>> path = new ArrayList<>();
         for(int i=0;i<n;i++) {
             path.add(new ArrayList<>());
         }
+
+        //make here two-way connection
         for(int i=0;i<m;i++) {
             path.get(graph.get(i).get(0)).add(graph.get(i).get(1));
             path.get(graph.get(i).get(1)).add(graph.get(i).get(0));
         }
+
         int infinity = Integer.MAX_VALUE;
 
         int [] dist = new int[n];

@@ -87,42 +87,47 @@ public class KhansAlgorithm {
         int [] inDegree = new int[numCourses];
         Arrays.fill(inDegree, 0);
 
+        ArrayList<ArrayList<Integer>>  graph = new ArrayList<>();
+
+        for(int i =0;i<numCourses;i++){
+            graph.add(new ArrayList<>());
+        }
+
         // Step 1: Calculate in-degree for each node
         for (int i = 0; i < numCourses; i++) {
-            for (int j = 0; j < numCourses; j++) {
-                if (prerequisites[i][j] == 1) { // edge i -> j exists
-                    inDegree[j]++;
-                }
-            }
+           int course = inDegree[0];
+           int prereq = inDegree[1];
+           graph.get(course).add(prereq);
+           inDegree[prereq]++;
         }
 
-            Queue<Integer> queue = new LinkedList<>();
-            for (int i = 0; i < numCourses; i++) {
-                if(inDegree[i]==0){
-                    queue.offer(i);
-                }
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < numCourses; i++) {
+            if(inDegree[i]==0){
+                queue.offer(i);
             }
-            List<Integer> topo = new ArrayList<>();
-            int count = 0;
+        }
+        List<Integer> topo = new ArrayList<>();
+        int count = 0;
 
-            while(!queue.isEmpty()){
-                int node = queue.poll();
-                topo.add(node);
-                count++;
-                // Decrease in-degree of adjacent nodes
-                //node mean is row j mean column
-                for (int j = 0; j < numCourses; j++) {
-                    if (prerequisites[node][j] == 1) {
-                        inDegree[j]--;
-                        if (inDegree[j] == 0) {
-                            queue.offer(j);
-                        }
+        while(!queue.isEmpty()){
+            int node = queue.poll();
+            topo.add(node);
+            count++;
+            // Decrease in-degree of adjacent nodes
+            //node mean is row j mean column
+            for (int j = 0; j < numCourses; j++) {
+                if (prerequisites[node][j] == 1) {
+                    inDegree[j]--;
+                    if (inDegree[j] == 0) {
+                        queue.offer(j);
                     }
                 }
-
             }
-            return count == numCourses;
+
         }
+        return count == numCourses;
+    }
 
 
 }

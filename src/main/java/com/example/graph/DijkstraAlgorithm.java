@@ -17,7 +17,12 @@ public class DijkstraAlgorithm {
         Arrays.fill(dist, Integer.MAX_VALUE);
         dist[source] = 0;
 
-        PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[1]));
+        PriorityQueue<int[]> pq = new PriorityQueue<>(new Comparator<int[]>() {
+            public int compare(int[] a, int[] b) {
+                return a[1] - b[1]; // compare distance
+            }
+        });
+
         pq.offer(new int[]{source, 0});
 
         while (!pq.isEmpty()) {

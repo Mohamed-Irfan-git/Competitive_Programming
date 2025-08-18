@@ -5,15 +5,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
-class Edge {
-    int adjNode, weight;
-    public Edge(int adjNode, int weight) {
-        this.adjNode = adjNode;
-        this.weight = weight;
-    }
-}
-
 public class DAGShortestPath {
+    public static class Edge {
+        int adjNode, weight;
+        public Edge(int adjNode, int weight) {
+            this.adjNode = adjNode;
+            this.weight = weight;
+        }
+    }
     static final int INF = Integer.MAX_VALUE;
 
     // Topological sort (DFS)
