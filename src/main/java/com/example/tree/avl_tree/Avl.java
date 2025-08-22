@@ -1,7 +1,7 @@
 package com.example.tree.avl_tree;
 
 public class Avl {
-    private class Node {
+    private static class Node {
         private final int value;
         private Node left;
         private Node right;

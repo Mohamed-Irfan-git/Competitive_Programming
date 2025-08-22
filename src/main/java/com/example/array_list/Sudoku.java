@@ -4,6 +4,7 @@ public class Sudoku {
     public static void main(String[] args) {
         char ch = (char)(5+'0');
         System.out.println((int)ch);
+        System.out.println((char)53);
         char[][] sudo = {
                 {'5','3','.','.','7','.','.','.','.'},
                 {'6','.','.','1','9','5','.','.','.'},
@@ -46,11 +47,11 @@ public class Sudoku {
                 }
 
             }
-            if(flag==false){
+            if(!flag){
                 break;
             }
         }
-        if(flag == true){
+        if(flag){
             return true;
         }
         for(int number =1;number<=9;number++){
@@ -80,9 +81,6 @@ public class Sudoku {
                 return false;
             }
         }
-
-
-
 
         int sqrt = (int)Math.sqrt(board.length);
         int rowStart = row-row%sqrt;

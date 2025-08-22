@@ -32,7 +32,6 @@ public class KhansAlgorithm {
             topo.add(node);
             count++;
 
-
             for(int i:graph.get(node)){
                 inDegree[i]--;
                 if(inDegree[i]==0){
