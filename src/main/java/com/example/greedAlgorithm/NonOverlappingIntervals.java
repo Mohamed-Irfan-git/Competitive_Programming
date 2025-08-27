@@ -18,7 +18,7 @@ public class NonOverlappingIntervals {
         Arrays.sort(intervals, new Comparator<Interval>() {
             @Override
             public int compare(Interval o1, Interval o2) {
-                return o1.start - o2.start;
+                return o1.end - o2.end;
             }
         });
 

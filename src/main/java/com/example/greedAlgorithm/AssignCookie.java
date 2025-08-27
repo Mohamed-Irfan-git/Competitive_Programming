@@ -24,7 +24,5 @@ public class AssignCookie {
             j++;
         }
         return count;
-
-
     }
 }

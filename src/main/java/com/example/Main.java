@@ -17,8 +17,10 @@ public class Main {
 
         System.out.println(str.substring(2));
 
+        String a = "hello";
+        String b = "hello";
 
-
+        System.out.println(a.indexOf(b));
 
     }
 }

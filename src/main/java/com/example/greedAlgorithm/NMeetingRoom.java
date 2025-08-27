@@ -18,7 +18,7 @@ public class NMeetingRoom {
         Arrays.sort(meetings,new Comparator<Meeting>(){
             @Override
             public int compare(Meeting o1, Meeting o2) {
-                return o1.start - o2.start;
+                return o1.end - o2.end;
             }
         });
 
