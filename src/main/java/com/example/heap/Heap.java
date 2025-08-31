@@ -69,6 +69,7 @@ public class Heap<T extends Comparable<T>> {
             swap(min,index);
             downHeap(min);
         }
+
     }
 
     public ArrayList<T> heapSort() throws Exception {
@@ -80,6 +81,7 @@ public class Heap<T extends Comparable<T>> {
         list=list1;
         return list;
     }
+
 
     public ArrayList<T> displayAll(){
         return new ArrayList<>(list);
