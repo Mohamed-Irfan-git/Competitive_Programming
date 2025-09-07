@@ -15,12 +15,10 @@ public class Main {
 //        queue.offer(3);
 //        System.out.println(queue.remove());
 
-        System.out.println(str.substring(2));
 
-        String a = "hello";
-        String b = "hello";
+        System.out.println(str.substring(1));
+        System.out.println(str.substring(0,3));
 
-        System.out.println(a.indexOf(b));
 
     }
 }
