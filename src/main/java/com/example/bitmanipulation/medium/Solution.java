@@ -1,5 +1,7 @@
 package com.example.bitmanipulation.medium;
 
+
+//google question
 class Solution {
     public int[][] flipAndInvertImage(int[][] image) {
 
