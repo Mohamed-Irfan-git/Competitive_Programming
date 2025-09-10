@@ -192,6 +192,40 @@ public class LinkList {
 
     }
 
+    // leetcode question
+    public void removeNthFromEnd(int n){
+        removeNthFromEnd(this.head,4);
+
+    }
+
+    private Node removeNthFromEnd(Node head, int n) {
+        if(head==null){
+            return null;
+
+        }
+        int size =  getSize(head);
+        int lastEl = size - n;
+
+
+        Node node = head;
+        if(size==1){
+            return head;
+        }
+        if(lastEl==0){
+            return node;
+
+        }
+
+        for(int i=0; i<lastEl-1; i++){
+            node = node.next;
+        }
+        return head;
+
+    }
+
+
+
+
     private int getSize(Node head){
         int count = 0;
         Node temp = head;

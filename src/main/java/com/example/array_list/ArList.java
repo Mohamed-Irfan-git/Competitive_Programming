@@ -1,6 +1,8 @@
 package com.example.array_list;
 
 
+import java.util.stream.Stream;
+
 public class ArList {
     private int [] data;
     private static final int DEFAULT_SIZE=10;
@@ -34,6 +36,7 @@ public class ArList {
                 data[i]=value;
             }
         }
+        
     }
     public int delete(int index){
         int temp=data[index];

@@ -8,8 +8,9 @@ public class Main {
         linkList.insertFirst(30);
         linkList.insertFirst(40);
         linkList.insertFirst(50);
-        linkList.insertRec(15,2);
+//        linkList.insertRec(15,2);
         linkList.insertLast(32);
+        linkList.removeNthFromEnd(4);
         linkList.display();
 
 
