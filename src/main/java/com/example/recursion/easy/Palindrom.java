@@ -14,8 +14,8 @@ public class Palindrom {
             return false;
 
         }
-        boolean flag = isPalindrom(str,left+1,right-1);
-        return flag;
+        boolean val = isPalindrom(str,left+1,right-1);
+        return val;
 
     }
 }
