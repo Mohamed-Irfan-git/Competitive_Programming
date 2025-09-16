@@ -20,13 +20,19 @@ public class SubSequence {
 
         // Choice 1: include array[index]
         current.add(array[index]);
+
+        System.out.println("adding in to current "+ result);
         result.addAll(backtracking(array, index + 1, current));
+        System.out.println("before remove  "+ result);
 
         //Backtrack
         current.remove(current.size() - 1);
+        System.out.println("after remove  "+ result);
+
 
         //Choice 2: exclude array[index]
         result.addAll(backtracking(array, index + 1, current));
+        System.out.println("before remove add "+ result);
 
         return result;
     }
