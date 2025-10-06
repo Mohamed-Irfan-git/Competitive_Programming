@@ -14,7 +14,7 @@ public class Remove {
 
         int[] arr1 = new int[arr.length];
         for(int i=0;i<arr.length;i++){
-            if(removeSerach(arr[i],arr1)){
+            if(removeSearch(arr[i],arr1)){
                 arr1[i]=arr[i];
             }
 
@@ -23,7 +23,7 @@ public class Remove {
 
 
     }
-    public static boolean removeSerach(int n,int [] arr){
+    public static boolean removeSearch(int n,int [] arr){
         for(int j=0;j<arr.length-1;j++){
             if(arr[j]==n){
                 return false;
