@@ -66,10 +66,10 @@ src/
 ```
 
 ## 💡 Why This Repository?
-✅ Implemented in Java 17 with modern syntax and best practices
-✅ Structured to allow easy navigation and learning
-✅ Ideal for interview preparation, coding competitions, and self-learning
-✅ Covers both classic and advanced topics in one place
+* ✅ Implemented in Java 17 with modern syntax and best practices
+* ✅ Structured to allow easy navigation and learning
+* ✅ Ideal for interview preparation, coding competitions, and self-learning
+* ✅ Covers both classic and advanced topics in one place
 
 ## 🛠 Tools & Requirements
 Java 17 (JDK)
