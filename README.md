@@ -97,13 +97,13 @@ Please create a pull request with proper descriptions.
 ## 📚 References
 #### Java Official Documentation
 ```bash
-https://docs.oracle.com/en/java/
+https://docs.oracle.com/javase/8/docs/
 ```
-GeeksforGeeks
+#### GeeksforGeeks
 ```bash
 https://www.geeksforgeeks.org/
 ```
-LeetCode
+#### LeetCode
 ```bash
 https://leetcode.com/
 ```
