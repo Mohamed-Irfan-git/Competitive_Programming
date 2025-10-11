@@ -72,9 +72,9 @@ src/
 * ✅ Covers both classic and advanced topics in one place
 
 ## 🛠 Tools & Requirements
-Java 17 (JDK)
-IDE: IntelliJ IDEA / Eclipse / VS Code (Java Extension)
-Build Tool: Maven  for project management
+* Java 17 (JDK)
+* IDE: IntelliJ IDEA / Eclipse / VS Code (Java Extension)
+* Build Tool: Maven  for project management
 
 ## 📈 How to Use
 1) Clone the repository
