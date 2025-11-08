@@ -11,4 +11,13 @@ public class Main {
         System.out.println(Integer.lowestOneBit(13));
 
     }
+
+
+    public static void hello(String a){
+        System.out.println("a");
+    }
+
+    public static String hello2(String a){
+        return a;
+    }
 }

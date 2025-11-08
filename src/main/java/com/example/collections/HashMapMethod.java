@@ -1,7 +1,7 @@
 package com.example.collections;
 
 import java.util.HashMap;
-import java.util.Map;
+
 
 public class HashMapMethod {
     public static void main(String[] args) {

@@ -1,6 +1,5 @@
 package com.example.tree.avl_tree;
 
-import com.example.tree.binary_tree.BinarySearchTree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

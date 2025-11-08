@@ -16,6 +16,7 @@ public class CircularQueue {
     public CircularQueue(int size) {
         this.data=new int[size];
     }
+
     public void insert(int val) throws QueueException{
         if(isFull()){
             throw new QueueException("Queue is full");

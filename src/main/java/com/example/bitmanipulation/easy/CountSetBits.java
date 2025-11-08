@@ -4,6 +4,7 @@ public class CountSetBits {
     public static void main(String[] args) {
         countSetBits(10);
     }
+
     static void countSetBits(int n){
         int count = 0;
 
