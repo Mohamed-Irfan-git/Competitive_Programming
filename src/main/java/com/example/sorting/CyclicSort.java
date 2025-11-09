@@ -2,6 +2,7 @@ package com.example.sorting;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class CyclicSort {
     public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class CyclicSort {
         missingNumber(arr3);
 
         int[] arr1 = {4,3,2,7,8,2,3,1};
-        findAllMissingNumber(arr1);
+        findDuplicate(arr1);
     }
 
     // Correct cyclic sort
@@ -60,5 +61,34 @@ public class CyclicSort {
         }
 
         System.out.println("All missing: " + list);
+    }
+
+    static void findDuplicate(int [] arr){
+        int i = 0;
+        HashSet<Integer> set = new HashSet<>();
+        while (i < arr.length) {
+            int correctIndex = arr[i] - 1; // where this number should go
+
+            if (arr[i] >= 1 && arr[i] <= arr.length && arr[i] != arr[correctIndex]) {
+                // swap
+                int temp = arr[i];
+                arr[i] = arr[correctIndex];
+                arr[correctIndex] = temp;
+            }
+            else {
+                if (arr[i] == arr[correctIndex] && i!= correctIndex) {
+                    set.add(arr[i]);
+
+                }
+                i++;
+            }
+        }
+        ArrayList<Integer> list = new ArrayList<>();
+        list.addAll(set);
+        System.out.println("Duplicates: " + list);
+
+    }
+    static void findAllDuplicate(int[] arr){
+
     }
 }

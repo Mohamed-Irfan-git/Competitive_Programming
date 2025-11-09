@@ -1,4 +1,4 @@
-package com.example.graph.questions;
+package com.example.graph.patterns;
 
 
 import java.util.*;
