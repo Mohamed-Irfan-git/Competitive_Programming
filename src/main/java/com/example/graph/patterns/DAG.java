@@ -7,6 +7,22 @@ import java.util.Stack;
 
 public class DAG {
     public static void main(String[] args) {
+        int n=6;
+        List<List<Integer>> graph = new ArrayList<>();
+        for(int i=0;i<n;i++) {
+            graph.add(new ArrayList<>());
+        }
+        addEdge(graph, 1, 2);
+        addEdge(graph, 1, 3);
+        addEdge(graph, 2, 4);
+        addEdge(graph, 3, 4);
+        addEdge(graph, 4, 5);
+
+        topoSort(1,graph);
+
+    }
+    static void addEdge(List<List<Integer>> graph,int u,int v){
+        graph.get(u).add(v);
 
     }
     public static void topologicalSort(List<List<Integer>> graph,boolean[] visited,int v,Stack<Integer> stack) {
@@ -23,7 +39,7 @@ public class DAG {
         boolean[] visited = new boolean[v];
         Stack<Integer> stack = new Stack<>();
 
-        for(int i=0;i<v;i++) {
+        for(int i=1;i<v;i++) {
             if(!visited[i]) {
                 topologicalSort(graph,visited,i,stack);
             }
@@ -31,18 +47,22 @@ public class DAG {
 
         int [] dist = new int[v];
         Arrays.fill(dist,Integer.MAX_VALUE);
-        ArrayList<Integer> list = new ArrayList<>();
+        dist[source]=0;
 
         while(!stack.isEmpty()) {
-            int node = stack.pop();
-            if(dist[node]==Integer.MAX_VALUE) {
-                for(int i : graph.get(node)) {
+            int u = stack.pop();
+            if(dist[u]!=Integer.MAX_VALUE) {
+                for(int i : graph.get(u)) {
+                    if(dist[i] > dist[u]+1) {
+                        dist[i] = dist[u]+1;
+                    }
 
-                    // we need to create edges so we will do further delay
 
                 }
             }
         }
+
+        System.out.println(Arrays.toString(dist));
 
     }
 }

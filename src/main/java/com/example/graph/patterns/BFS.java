@@ -2,11 +2,10 @@ package com.example.graph.patterns;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 
-/**
- * DEPTH FIRST SEARCH this is a very important pattern
- */
-public class DFS {
+public class BFS {
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
         int n = 8;
@@ -31,31 +30,29 @@ public class DFS {
         graph.get(8).add(4);
         graph.get(8).add(7);
 
-        helper( graph);
-
-
-    }
-
-    static void dfs(int node , boolean[] visited, ArrayList<ArrayList<Integer>> graph) {
-        visited[node] = true;
-
-        for(Integer i: graph.get(node)) {
-            if(!visited[i]) {
-                dfs(i, visited, graph);
-            }
-        }
+        helper(1, graph);
 
     }
 
-    static void helper( ArrayList<ArrayList<Integer>> graph){
+
+    static void helper(int source,ArrayList<ArrayList<Integer>> graph){
         boolean[] visited = new boolean[graph.size()];
+        visited[source] = true;
+        Queue<Integer> queue = new LinkedList<>();
+        ArrayList<Integer>path = new ArrayList<>();
 
-        for(int i = 1; i < visited.length; i++) {
-            if(!visited[i]) {
-                dfs(i, visited, graph);
-            }
+        queue.offer(source);
+        while(!queue.isEmpty()) {
+            int node = queue.poll();
+            path.add(node);
+           for(Integer i : graph.get(node)) {
+               if(!visited[i]) {
+                   visited[i] = true;
+                   queue.offer(i);
+               }
+           }
         }
-
+        System.out.println(path);
         System.out.println(Arrays.toString(visited));
 
     }

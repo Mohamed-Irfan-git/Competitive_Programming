@@ -34,7 +34,8 @@ public class TopologicalSort {
        int[] dist = new int[v];
        int index = 0;
        while(!stack.isEmpty()) {
-           dist[index++] = stack.pop();
+           dist[index] = stack.pop();
+           index++;
 
        }
         System.out.println(Arrays.toString(dist));
