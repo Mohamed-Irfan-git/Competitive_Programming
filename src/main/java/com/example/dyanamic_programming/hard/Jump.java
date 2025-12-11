@@ -1,4 +1,4 @@
-package com.example.dyanamic_programming;
+package com.example.dyanamic_programming.hard;
 
 import java.util.HashMap;
 

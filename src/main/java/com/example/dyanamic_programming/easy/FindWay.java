@@ -1,4 +1,4 @@
-package com.example.dyanamic_programming;
+package com.example.dyanamic_programming.easy;
 
 import java.util.Arrays;
 

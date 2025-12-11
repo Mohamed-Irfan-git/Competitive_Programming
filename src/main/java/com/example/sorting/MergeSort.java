@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int[] arr = { 5, 4, 3, 2, 1 };
+        int[] arr = { 36,15,42,1,9,8,2,18 };
         mergeSort(arr);
         //dynamcally array's value change that's why here also changed
         System.out.println(Arrays.toString(arr));

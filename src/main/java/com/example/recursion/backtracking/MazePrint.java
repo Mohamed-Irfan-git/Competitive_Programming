@@ -7,13 +7,13 @@ public class MazePrint {
     public static void main(String[] args) {
         boolean[][] maze = {
                 {true,true,true},
-                {true,true,true},
+                {true,false,true},
                 {true,true,true},
         };
         int[][] path = new int[maze.length][maze[0].length];
 //        upMaze("",3,3);
-//        someObs("",maze, 0,0);
-        path("",maze,0,0,path,1);
+        someObs("",maze, 0,0);
+//        path("",maze,0,0,path,1);
 
     }
     public static void maze(String p,int row,int col){

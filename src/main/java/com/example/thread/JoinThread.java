@@ -1,6 +1,5 @@
 package com.example.thread;
 
-import java.io.IOException;
 
 public class JoinThread implements Runnable{
     @Override

@@ -94,15 +94,15 @@ public class BinarySearchTree {
         display(node.left, "Left child of " + node.value + " : ");
         display(node.right, "Right child of " + node.value + " : ");
     }
-    public List<List<Integer>> breadthFirst(){
-        return breadthFirst(this.root);
+    public void breadthFirst(){
+        breadthFirst(this.root);
     }
 
 
     //breath first search(bfs)
-    private List<List<Integer>> breadthFirst(Node node){
+    private void breadthFirst(Node node){
         if(node == null ){
-            return null;
+            return;
         }
 
         List<List<Integer>> outer = new ArrayList<>();
@@ -124,7 +124,6 @@ public class BinarySearchTree {
 
             outer.add(inner);
         }
-        return outer;
 
     }
 

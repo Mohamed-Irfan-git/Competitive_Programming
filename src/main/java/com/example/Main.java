@@ -9,6 +9,8 @@ public class Main {
         System.out.println(Integer.toBinaryString(13));// convert number to binary
         System.out.println(Integer.highestOneBit(13));
         System.out.println(Integer.lowestOneBit(13));
+        String s = "123";
+        System.out.println(s.charAt(2));
 
     }
 

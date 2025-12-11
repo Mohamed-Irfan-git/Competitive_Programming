@@ -1,4 +1,4 @@
-package com.example.dyanamic_programming;
+package com.example.dyanamic_programming.easy;
 
 public class Permutation {
     public static void main(String[] args) {
@@ -19,4 +19,6 @@ public class Permutation {
             permutation(p1+ch+p2,up.substring(1));
         }
     }
+
+
 }
