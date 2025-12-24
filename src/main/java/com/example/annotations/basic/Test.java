@@ -1,6 +1,5 @@
 package com.example.annotations.basic;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
 @MyAnno(str="test",val = 0)

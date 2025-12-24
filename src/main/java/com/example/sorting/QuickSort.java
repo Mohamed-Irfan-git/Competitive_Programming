@@ -5,12 +5,12 @@ import java.util.Arrays;
 public class QuickSort {
     public static void main(String[] args) {
         int [] arr ={36,15,42,1,9,8,2,18};
-        quicksort(arr,0,arr.length-1);
+//        quicksort(arr,0,arr.length-1);
         System.out.println(Arrays.toString(arr));;
 
     }
-    public static void quicksort(int[] arr,int start,int end){
-        if(start>end){
+    public void quicksort(int[] arr,int start,int end){
+        if(start>=end){
             return;
         }
         int mid = start + (end - start)/2;
