@@ -6,7 +6,7 @@ import java.util.List;
 public class Aschii {
     public static void main(String[] args) {
         aschii("","abc");
-        System.out.println(aschiiRet("","abc"));
+        System.out.println(aschiiRet("","23"));
     }
     static void aschii(String p,String up){
         if(up.isEmpty()){

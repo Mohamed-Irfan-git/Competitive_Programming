@@ -1,10 +1,14 @@
 package com.example.recursion.medium;
 
+import java.util.Arrays;
+
 public class Permutation {
     public static void main(String[] args) {
-        permutation("","1587");
-        System.out.println( permutationCount("","1587"));
-
+//        permutation("","1587");
+//        System.out.println( permutationCount("","1587"));
+        String up = "abc";
+        char[] chars = up.toCharArray();
+        perm(chars, 0);
 
     }
     static void permutation(String p,String up){
@@ -39,4 +43,24 @@ public class Permutation {
         }
         return count;
     }
+
+    static void perm(char [] up,int index ){
+        if(index == up.length){
+            System.out.println(Arrays.toString(up));
+            return;
+        }
+
+        for(int i=index; i<up.length;i++){
+            swap(up,index,i);
+            perm(up,index+1);
+            swap(up,index,i);
+        }
+    }
+
+    static void swap(char [] up,int i,int j){
+        char temp = up[i];
+        up[i] = up[j];
+        up[j] = temp;
+    }
+
 }

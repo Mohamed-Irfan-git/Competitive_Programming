@@ -11,6 +11,7 @@ public class Main {
         System.out.println(Integer.lowestOneBit(13));
         String s = "123";
         System.out.println(s.charAt(2));
+        System.out.println((char) 65);
 
     }
 
