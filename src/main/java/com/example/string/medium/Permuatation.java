@@ -2,7 +2,8 @@ package com.example.string.medium;
 
 public class Permuatation {
     public static void main(String[] args) {
-        permu("","123");
+        boolean [] seen = new boolean[3];
+        permutate("","123",seen);
 
     }
     public static String permu(String p,String up){
@@ -22,5 +23,21 @@ public class Permuatation {
             s= permu(b+ch+a,up.substring(1));
         }
         return s;
+    }
+
+    public static void permutate(String p,String up, boolean [] seen){
+        if(p.length() == up.length() ){
+            System.out.println(p);
+            return;
+        }
+
+        for(int i = 0; i < up.length();i++){
+            if(!seen[i]){
+                seen[i] = true;
+                char t = up.charAt(i);
+                permutate(p+t,up,seen);
+                seen[i] = false;
+            }
+        }
     }
 }

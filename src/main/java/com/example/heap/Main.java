@@ -11,6 +11,5 @@ public class Main {
 
         System.out.println(heap.displayAll());
         System.out.println(heap.heapSort());
-
     }
 }
