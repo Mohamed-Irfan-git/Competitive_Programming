@@ -1,49 +1,40 @@
 package com.example.db;
 
-import java.sql.*;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 public class Main {
     public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/lms_db";
-        String pass = "Irfan#@123";
-        String user = "root";
+        Connection connection = DBConnection.getInstance().getConnection();
 
+        String sql = "INSERT INTO user VALUES (?,?,?,?,?)";
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            preparedStatement.setInt(1,5);
+            preparedStatement.setString(2,"irfan");
+            preparedStatement.setString(3,"123");
+            preparedStatement.setString(4,"e@mail.com");
+            preparedStatement.setString(5,"teacher");
 
-            Connection connection = DriverManager.getConnection(url,user,pass);
-            System.out.println("Database connected successfully");
-
-
-            String sql = "SELECT * FROM department";
-            PreparedStatement ps  = connection.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-
-            String sql2 = "SELECT  name FROM department WHERE department_id= ?";
-            PreparedStatement ps1 = connection.prepareStatement(sql2);
-            ps1.setString(1,"ICT");
-            ResultSet rs1 = ps1.executeQuery();
-
-            while (rs1.next()){
-                System.out.println(
-                        rs1.getString(1)
-                );
+            int row = preparedStatement.executeUpdate();
+            if(row>0){
+                System.out.println("user table data inserted successfully");
             }
 
 
-
-
-
-        connection.close();
-        } catch (ClassNotFoundException e) {
-            System.out.println("Driver class not found");
-            e.printStackTrace();
-        } catch (SQLException e) {
-            System.out.println("Database not connected successfully");
-            e.printStackTrace();
-
+        }catch (Exception e){
+            System.out.println(e.getMessage());
         }
+
+
+
+
+
+
 
     }
 }

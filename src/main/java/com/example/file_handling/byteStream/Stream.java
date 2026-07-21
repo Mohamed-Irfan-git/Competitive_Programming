@@ -22,42 +22,23 @@ public class Stream {
     public static void main(String[] args) throws IOException {
         File file = new File("example.txt");
 
+        try(FileOutputStream fos = new FileOutputStream(file,true)){
+            String string = "hello world\n";
+            byte [] bt = string.getBytes();
+            fos.write(bt);
 
-        if(file.exists()){
-            System.out.println("file exists");
+        }catch (IOException e){
+            System.out.println(e.getMessage());
         }
-        else{
-            if(file.createNewFile()){
-                System.out.println("file created");
-            }else {
-                System.out.println("Fail to create file");
+
+        try(FileInputStream fis = new FileInputStream(file)){
+            int i;
+            while((i=fis.read())!=-1){
+                System.out.print((char)i);
             }
         }
 
-        FileWriter fileWriter = new FileWriter(file);
-        fileWriter.write("Hello World\n");
-        fileWriter.write("my name is irfan");
-        fileWriter.close();
 
 
-        FileReader fileReader = new FileReader(file);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-        String line;
-        while ((line = bufferedReader.readLine()) != null){
-            System.out.println(line);
-        }
-        fileReader.close();
-
-        FileInputStream fileInputStream = new FileInputStream(file);
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
-        int i;
-
-        // this one only work for byte Stream
-        while ((i=bufferedInputStream.read())!=1){
-            System.out.println((char)i);
-        }
-
-        fileInputStream.close();
     }
 }

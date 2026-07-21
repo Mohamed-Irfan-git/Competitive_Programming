@@ -1,6 +1,6 @@
 package com.example.prefix_sum;
 
-public class Prefix1 {
+class Prefix1 {
     public static void main(String[] args) {
         int [] arr = {8,3,-2,4,10,-1,0,5,3};
         System.out.println(pre(arr,2,7));
