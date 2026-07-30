@@ -2,7 +2,7 @@ package com.example.math;
 
 public class GCD {
     public static void main(String[] args) {
-        gcd1(20,15);
+        System.out.println(gcd1(10,5));
 
     }
 
@@ -19,13 +19,11 @@ public class GCD {
         System.out.println(a);
     }
 
-    public static void gcd1(int a,int b){
-        while(b!=0){
-            int rem = a % b;
-            a = b;
-            b = rem;
+    public static int gcd1(int a,int b){
+        if(b == 0){
+            return a;
         }
 
-        System.out.println(a);
+        return gcd1(b,a%b);
     }
 }
