@@ -43,6 +43,8 @@ public class ConvexHull {
         List<Point> convexHUll(List<Point> points){
             Collections.sort(points);
             List<Point> hull = new ArrayList<>();
+
+            // build upper hull
             for(Point p : points){
 
                 while(hull.size()>=2 && orientation(
@@ -56,6 +58,7 @@ public class ConvexHull {
 
             int lastIndex = hull.size();
 
+            // build lower hull
             for(int i = points.size()-2;i>=0;i--){
                 Point p = points.get(i);
 

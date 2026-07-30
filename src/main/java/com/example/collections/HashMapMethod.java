@@ -16,6 +16,7 @@ public class HashMapMethod {
         map.put(3,4);
         map.put(4,5);
         map.put(5,6);
+        System.out.println(map.get(5));
 
 
         for(HashMap.Entry<Integer,Integer> entry:map.entrySet()){

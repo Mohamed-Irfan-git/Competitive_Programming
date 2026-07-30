@@ -25,12 +25,5 @@ public class ArrayMethods {
         int min = Arrays.stream(arr1).min().getAsInt();
 
 
-
-
-
-
-
-
-
     }
 }
