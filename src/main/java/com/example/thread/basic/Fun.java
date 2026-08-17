@@ -1,7 +1,9 @@
 package com.example.thread.basic;
 
+import java.util.concurrent.*;
+
 public class Fun {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws Exception {
 //        Drivers drivers = new Drivers();
 //        drivers.start();
 
@@ -49,5 +51,15 @@ public class Fun {
         Thread thread = new Thread(task); // instead of writing inside the thread we separating
 
 //        System.out.println(worker.getState());
+
+        Callable<Integer> task1 =()->{
+            return 10 + 10;
+        };
+
+        System.out.println(task1.call());
+
+        ExecutorService service = Executors.newFixedThreadPool(10);
+        Future<Integer> ans = service.submit(task1);
+        int val = ans.get();
     }
 }
