@@ -1,4 +1,4 @@
-package com.example.thread;
+package com.example.thread.solution;
 
 public class CurrentThread {
     public static void main(String[] args) {

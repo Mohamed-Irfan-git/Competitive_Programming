@@ -1,4 +1,4 @@
-package com.example.thread;
+package com.example.thread.solution;
 
 
 public class JoinThread implements Runnable{

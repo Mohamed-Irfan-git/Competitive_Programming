@@ -1,10 +1,17 @@
 package com.example.thread.basic;
 
-public class Drivers extends Thread{
-    @Override
-    public void run(){
-        for (char a='a' ; a<='z' ;a++){
-            System.out.println(a);
-        }
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class Drivers {
+    public static void main(String[] args) throws InterruptedException {
+        VisibilityProblem visibilityProblem = new VisibilityProblem();
+        Thread thread = new Thread(visibilityProblem);
+        thread.start();
+        Thread.sleep(1000);
+        visibilityProblem.stop();
+
+        // this is thread safe
+        AtomicInteger automic = new AtomicInteger(0);
+
     }
 }
